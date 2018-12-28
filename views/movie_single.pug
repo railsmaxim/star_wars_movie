@@ -1,0 +1,27 @@
+html(lang="en")
+  head
+    include partials/head.pug
+  body
+    include partials/header.pug
+
+    #hero-image-single(style=`background-image: url("/images/${ movie.hero_image }")`)
+      h1#hero-title= title
+
+    .content-padding.clearfix
+      .poster-wrapper
+        img.img-responsive(src=`/images/${movie.poster}`)
+
+      .description-wrapper
+        .description
+          h2.movie-header Description
+          p= movie.description
+
+        .main-characters
+          h2.movie-header Main Characters
+
+          ul
+            - for (var i = 0; i < main_characters.length; i++)
+              li= main_characters[i]
+
+    include partials/footer.pug
+    include partials/scripts.pug

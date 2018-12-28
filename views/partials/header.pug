@@ -1,0 +1,14 @@
+nav.navbar.navbar-fixed-top
+  .content-padding
+    ul.nav.navbar-nav.navbar-right
+      li
+        a(href='/') Home
+
+      li.dropdown
+        a.dropdown-toggle(href='#' data-toggle='dropdown') Movies 
+          i.fa.fa-chevron-down
+
+        ul.dropdown-menu
+          - for (var i = 0; i < movies.length; i++)
+            li
+              a.episode-link(href=`/star_wars_episode/${ i + 1 }`)= movies[i].title
